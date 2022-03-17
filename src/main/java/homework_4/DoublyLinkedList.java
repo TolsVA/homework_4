@@ -1,6 +1,5 @@
 package homework_4;
 
-import java.util.ListIterator;
 import java.util.function.Consumer;
 
 public class DoublyLinkedList<E> extends SinglyLinkedList<E> implements LinkedListDoubly<E>, Iterable<E>{
@@ -279,15 +278,13 @@ public class DoublyLinkedList<E> extends SinglyLinkedList<E> implements LinkedLi
             int index = 0;
 
             @Override
-            public E nextFirst() {
+            public void nextFirst() {
                 node = head;
-                return node.data;
             }
 
             @Override
-            public E nextLast() {
+            public void nextLast() {
                 node = tail;
-                return node.data;
             }
 
             @Override

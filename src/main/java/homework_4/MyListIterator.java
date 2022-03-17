@@ -4,8 +4,8 @@ import java.util.ListIterator;
 
 public interface MyListIterator<E> extends ListIterator<E> {
 
-    public E nextFirst();
+    void nextFirst();
 
-    public E nextLast();
+    void nextLast();
 
 }
