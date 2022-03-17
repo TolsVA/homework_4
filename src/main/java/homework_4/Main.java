@@ -36,7 +36,7 @@ public class Main {
     private static <E> void testIterator(DoublyLinkedList<E> doublyLinkedList) {
         System.out.println("testIterator:");
 
-        ListIterator<E> iterator = doublyLinkedList.iterator();
+        MyListIterator<E> iterator = doublyLinkedList.iterator();
         int c = 0;
         while (iterator.hasNext()) {
             iterator.next();
@@ -61,9 +61,9 @@ public class Main {
         doublyLinkedList.display();
 
         System.out.println(iterator);
-        while (iterator.hasNext()) {
-            iterator.next();
-        }
+
+        iterator.nextLast();
+
         System.out.println(iterator);
 
         System.out.print("Проход в обратную сторону - [" + iterator);
@@ -76,9 +76,9 @@ public class Main {
         System.out.println();
 
         System.out.println(iterator);
-        while (!iterator.hasNext()) {
-            iterator.next();
-        }
+
+        iterator.nextFirst();
+
         System.out.println(iterator);
 
         System.out.print("[" + iterator);

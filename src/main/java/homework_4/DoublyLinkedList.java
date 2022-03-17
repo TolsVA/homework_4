@@ -272,11 +272,23 @@ public class DoublyLinkedList<E> extends SinglyLinkedList<E> implements LinkedLi
     }
 
     @Override
-    public ListIterator<E> iterator() {
-        return new ListIterator<>() {
+    public MyListIterator<E> iterator() {
+        return new MyListIterator<>() {
 
             Node<E> node = head;
             int index = 0;
+
+            @Override
+            public E nextFirst() {
+                node = head;
+                return node.data;
+            }
+
+            @Override
+            public E nextLast() {
+                node = tail;
+                return node.data;
+            }
 
             @Override
             public boolean hasNext() {
@@ -356,7 +368,7 @@ public class DoublyLinkedList<E> extends SinglyLinkedList<E> implements LinkedLi
 
             @Override
             public void forEachRemaining(Consumer<? super E> action) {
-                ListIterator.super.forEachRemaining(action);
+                MyListIterator.super.forEachRemaining(action);
             }
         };
     }
